@@ -1,6 +1,6 @@
 import React from "react";
 
-function Filters({filterPet, onChangeType}) {
+function Filters({onFindPetsClick, onChangeType}) {
 
 
   return (
@@ -16,7 +16,7 @@ function Filters({filterPet, onChangeType}) {
       </div>
 
       <div className="field">
-        <button onClick={filterPet} className="ui secondary button">Find pets</button>
+        <button onClick={onFindPetsClick} className="ui secondary button">Find pets</button>
       </div>
     </div>
   );

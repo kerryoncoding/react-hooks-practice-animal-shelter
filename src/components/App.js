@@ -20,7 +20,7 @@ function App() {
     setFilters(e.target.value)
   }
 
-  function filterPet(){
+  function onFindPetsClick(){
     let tempList = pets.map((item)=>item)
     let updatedList = []
     if (filters != "all") {
@@ -39,7 +39,7 @@ function App() {
       <div className="ui container">
         <div className="ui grid">
           <div className="four wide column">
-            <Filters filterPet={filterPet} onChangeType={onChangeType} />
+            <Filters onFindPetsClick={onFindPetsClick} onChangeType={onChangeType} />
           </div>
           <div className="twelve wide column">
             <PetBrowser list={list} />
