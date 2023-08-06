@@ -16,7 +16,7 @@ function App() {
     setList(data)})
   }, [])
 
-  function filterType(e){
+  function onChangeType(e){
     setFilters(e.target.value)
   }
 
@@ -39,7 +39,7 @@ function App() {
       <div className="ui container">
         <div className="ui grid">
           <div className="four wide column">
-            <Filters filterPet={filterPet} filterType={filterType} />
+            <Filters filterPet={filterPet} onChangeType={onChangeType} />
           </div>
           <div className="twelve wide column">
             <PetBrowser list={list} />
