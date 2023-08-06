@@ -1,13 +1,13 @@
 import React from "react";
 
-function Filters({filterPet}) {
+function Filters({filterPet, filterType}) {
 
 
   return (
     <div className="ui form">
       <h3>Animal type</h3>
       <div className="field">
-        <select name="type" id="type" aria-label="type" onChange={filterPet}>
+        <select name="type" id="type" aria-label="type" onChange={filterType}>
           <option value="all">All</option>
           <option value="cat">Cats</option>
           <option value="dog">Dogs</option>
@@ -16,7 +16,7 @@ function Filters({filterPet}) {
       </div>
 
       <div className="field">
-        <button className="ui secondary button">Find pets</button>
+        <button onClick={filterPet} className="ui secondary button">Find pets</button>
       </div>
     </div>
   );

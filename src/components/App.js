@@ -9,8 +9,6 @@ function App() {
   const [filters, setFilters] = useState("all");
   const URL = "http://localhost:3001/pets"
 
-  // let resetPets = pets.map((item)=> item)
-
   useEffect(()=> {
     fetch(URL)
     .then(res => res.json())
@@ -18,13 +16,15 @@ function App() {
     setList(data)})
   }, [])
 
-  function filterPet(e){
-    // let tempFilter = "all"
-    // setFilters(e.target.value)
+  function filterType(e){
+    setFilters(e.target.value)
+  }
+
+  function filterPet(){
     let tempList = pets.map((item)=>item)
     let updatedList = []
-    if (e.target.value != "all") {
-      updatedList = tempList.filter((item)=> item.type ==e.target.value)
+    if (filters != "all") {
+      updatedList = tempList.filter((item)=> item.type == filters)
     } else {
       updatedList = pets
     }
@@ -39,7 +39,7 @@ function App() {
       <div className="ui container">
         <div className="ui grid">
           <div className="four wide column">
-            <Filters filterPet={filterPet} />
+            <Filters filterPet={filterPet} filterType={filterType} />
           </div>
           <div className="twelve wide column">
             <PetBrowser list={list} />
