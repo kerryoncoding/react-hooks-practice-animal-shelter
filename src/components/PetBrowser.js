@@ -2,14 +2,20 @@ import React from "react";
 
 import Pet from "./Pet";
 
-function PetBrowser({pets}) {
+function PetBrowser({list}) {
 
-  console.log(pets)
+  console.log(list)
 
 
-  const petList = pets.map((item)=> item.id )
+  const petList = list.map((item)=> {
+    return (
+      <Pet 
+      key = {item.id}
+      item = {item} />
+    )
+  } )
 
-  return <div className="ui cards">{petList}E</div>;
+  return <div className="ui cards">{petList}</div>;
 }
 
 export default PetBrowser;

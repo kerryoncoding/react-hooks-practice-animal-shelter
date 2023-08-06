@@ -1,13 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-function Filters() {
-
-  const [petType, setPetType] = useState("all")
-
-  function filterPet(e){
-    console.log(e.target.value)
-    setPetType(e.target.value)
-  }
+function Filters({filterPet}) {
 
 
   return (
