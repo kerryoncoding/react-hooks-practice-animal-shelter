@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Filters() {
+
+  const [petType, setPetType] = useState("all")
+
+  function filterPet(e){
+    console.log(e.target.value)
+    setPetType(e.target.value)
+  }
+
+
   return (
     <div className="ui form">
       <h3>Animal type</h3>
       <div className="field">
-        <select name="type" id="type" aria-label="type">
+        <select name="type" id="type" aria-label="type" onChange={filterPet}>
           <option value="all">All</option>
           <option value="cat">Cats</option>
           <option value="dog">Dogs</option>

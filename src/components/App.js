@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Filters from "./Filters";
 import PetBrowser from "./PetBrowser";
@@ -6,6 +6,15 @@ import PetBrowser from "./PetBrowser";
 function App() {
   const [pets, setPets] = useState([]);
   const [filters, setFilters] = useState({ type: "all" });
+  const URL = "http://localhost:3001/pets"
+
+  useEffect(()=> {
+    fetch(URL)
+    .then(res => res.json())
+    .then(data => setPets(data))
+  }, [])
+
+
 
   return (
     <div className="ui container">
@@ -18,7 +27,7 @@ function App() {
             <Filters />
           </div>
           <div className="twelve wide column">
-            <PetBrowser />
+            <PetBrowser pets={pets} />
           </div>
         </div>
       </div>
