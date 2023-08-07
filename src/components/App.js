@@ -20,6 +20,13 @@ function App() {
     setFilters(e.target.value)
   }
 
+  function onAdoptPet(id){
+    console.log("adopted")
+    console.log(id)
+  }
+
+
+
   function onFindPetsClick(){
     let tempList = pets.map((item)=>item)
     let updatedList = []
@@ -42,7 +49,7 @@ function App() {
             <Filters onFindPetsClick={onFindPetsClick} onChangeType={onChangeType} />
           </div>
           <div className="twelve wide column">
-            <PetBrowser list={list} />
+            <PetBrowser list={list} onAdoptPet={onAdoptPet} />
           </div>
         </div>
       </div>

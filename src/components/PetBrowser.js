@@ -2,7 +2,7 @@ import React from "react";
 
 import Pet from "./Pet";
 
-function PetBrowser({list}) {
+function PetBrowser({list, onAdoptPet}) {
 
   console.log(list)
 
@@ -11,7 +11,8 @@ function PetBrowser({list}) {
     return (
       <Pet 
       key = {item.id}
-      item = {item} />
+      item = {item}
+      onAdoptPet={onAdoptPet} />
     )
   } )
 

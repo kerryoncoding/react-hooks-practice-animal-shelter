@@ -1,6 +1,12 @@
 import React from "react";
 
-function Pet({item}) {
+function Pet({item, onAdoptPet}) {
+
+  function handleClick(){
+    
+    onAdoptPet(item.id)
+  }
+
   return (
     <div className="card" data-testid="pet">
       <div className="content">
@@ -18,7 +24,7 @@ function Pet({item}) {
       </div>
       <div className="extra content">
         <button className="ui disabled button">Already adopted</button>
-        <button className="ui primary button">Adopt pet</button>
+        <button className="ui primary button" onClick={handleClick}>Adopt pet</button>
       </div>
     </div>
   );
