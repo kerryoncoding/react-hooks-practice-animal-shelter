@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import Filters from "./Filters";
 import PetBrowser from "./PetBrowser";
+import TimeInput from "./TimeInput"
 
 function App() {
   const [pets, setPets] = useState([]);
@@ -23,6 +24,7 @@ function App() {
   function onAdoptPet(id){
     console.log("adopted")
     console.log(id)
+    
   }
 
 
@@ -42,12 +44,16 @@ function App() {
     <div className="ui container">
       <header>
         <h1 className="ui dividing header">React Animal Shelter</h1>
+        <div>
+            <TimeInput />
+        </div>
       </header>
       <div className="ui container">
         <div className="ui grid">
           <div className="four wide column">
             <Filters onFindPetsClick={onFindPetsClick} onChangeType={onChangeType} />
           </div>
+          
           <div className="twelve wide column">
             <PetBrowser list={list} onAdoptPet={onAdoptPet} />
           </div>
