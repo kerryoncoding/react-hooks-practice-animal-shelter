@@ -7,7 +7,7 @@ function TimeInput(){
 
    function handleSubmit(e){
       e.preventDefault()
-      console.log(e.target.value)
+      console.log(maxTime)
    }
 
    return (
